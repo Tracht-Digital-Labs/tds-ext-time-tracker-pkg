@@ -15,7 +15,7 @@ describe("identity", () => {
     expect(manifest.id).toBe("time-tracker");
   });
 
-  it("uses a slug-safe id — it becomes part of nav keys and route paths", () => {
+  it("uses a slug-safe id, it becomes part of nav keys and route paths", () => {
     expect(manifest.id).toMatch(/^[a-z][a-z0-9-]*$/);
   });
 

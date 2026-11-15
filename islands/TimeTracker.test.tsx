@@ -152,7 +152,7 @@ describe("loading", () => {
     unreachable(/\/time\/summary$/);
     unreachable(/\/time\/entries$/);
     render(<TimeTracker />);
-    expect(await screen.findByText("Zeiten konnten nicht geladen werden — die API ist nicht erreichbar.")).toBeTruthy();
+    expect(await screen.findByText("Zeiten konnten nicht geladen werden, die API ist nicht erreichbar.")).toBeTruthy();
     expect(screen.getByText("Noch keine Einträge.")).toBeTruthy();
   });
 });

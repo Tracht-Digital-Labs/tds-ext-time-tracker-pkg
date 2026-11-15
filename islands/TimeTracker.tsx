@@ -107,7 +107,7 @@ export default function TimeTracker() {
         toast.danger(`Timer konnte nicht gestartet werden (HTTP ${res.status}).`);
       }
     } catch {
-      toast.danger("Timer konnte nicht gestartet werden — die API ist nicht erreichbar.");
+      toast.danger("Timer konnte nicht gestartet werden, die API ist nicht erreichbar.");
     } finally {
       setBusy(false);
       void load();
@@ -119,9 +119,9 @@ export default function TimeTracker() {
     try {
       const res = await apiFetch("/time/stop", { method: "POST" });
       if (res.ok) toast.success("Timer gestoppt.");
-      else toast.danger(`Timer konnte nicht gestoppt werden (HTTP ${res.status}) — er läuft weiter.`);
+      else toast.danger(`Timer konnte nicht gestoppt werden (HTTP ${res.status}), er läuft weiter.`);
     } catch {
-      toast.danger("Timer konnte nicht gestoppt werden — die API ist nicht erreichbar.");
+      toast.danger("Timer konnte nicht gestoppt werden, die API ist nicht erreichbar.");
     } finally {
       setBusy(false);
       void load();
@@ -138,7 +138,7 @@ export default function TimeTracker() {
     setBusy(false);
     if (res === null) {
       // The form keeps what was typed.
-      toast.danger("Eintrag konnte nicht gespeichert werden — die API ist nicht erreichbar.");
+      toast.danger("Eintrag konnte nicht gespeichert werden, die API ist nicht erreichbar.");
       return;
     }
     if (res.ok) {
@@ -165,7 +165,7 @@ export default function TimeTracker() {
       if (res.ok) toast.success("Eintrag gelöscht.");
       else toast.danger(`Löschen fehlgeschlagen (HTTP ${res.status}).`);
     } catch {
-      toast.danger("Löschen fehlgeschlagen — die API ist nicht erreichbar.");
+      toast.danger("Löschen fehlgeschlagen, die API ist nicht erreichbar.");
     } finally {
       void load();
     }
@@ -260,7 +260,7 @@ export default function TimeTracker() {
         <h2>Letzte Einträge</h2>
         {loadFailed ? (
           <Alert>
-            Zeiten konnten nicht geladen werden — die API ist nicht erreichbar.
+            Zeiten konnten nicht geladen werden, die API ist nicht erreichbar.
           </Alert>
         ) : null}
         {entries === null ? (

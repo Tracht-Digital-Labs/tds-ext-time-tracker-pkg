@@ -17,7 +17,7 @@ return [
         'pattern' => '/time/summary',
         'summary' => 'Wochensumme und laufender Timer',
         'description' => 'Die `dataEndpoint`-Route des Dashboard-Widgets. Immer auf den '
-            . 'angemeldeten Nutzer bezogen (`app_user_id` = `userId` aus dem JWT) — es '
+            . 'angemeldeten Nutzer bezogen (`app_user_id` = `userId` aus dem JWT), es '
             . 'gibt keine Möglichkeit, fremde Zeiten zu lesen.',
         'permission' => 'time:read',
         'responses' => [
@@ -67,8 +67,8 @@ return [
         'summary' => 'Laufenden Timer beenden',
         'permission' => 'time:write',
         'responses' => [
-            ['status' => 200, 'description' => '`{ok: true}` — der Timer lief und wurde beendet.'],
-            ['status' => 404, 'description' => '`{ok: false}` — es lief kein Timer.'],
+            ['status' => 200, 'description' => '`{ok: true}`, der Timer lief und wurde beendet.'],
+            ['status' => 404, 'description' => '`{ok: false}`, es lief kein Timer.'],
             ['status' => 401, 'description' => 'Keine Sitzung.'],
             ['status' => 403, 'description' => 'Kein `time:write`.'],
         ],
@@ -97,7 +97,7 @@ return [
         'method' => 'DELETE',
         'pattern' => '/time/entries/{id:[0-9]+}',
         'summary' => 'Zeiteintrag löschen',
-        'description' => 'Löscht nur innerhalb der eigenen Einträge — eine fremde Id trifft '
+        'description' => 'Löscht nur innerhalb der eigenen Einträge, eine fremde Id trifft '
             . 'keine Zeile und meldet trotzdem Erfolg, statt die Existenz preiszugeben.',
         'permission' => 'time:write',
         'params' => [
