@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
-import { Skeleton } from "@tracht-digital-solutions/tds-shared/components";
-import { apiFetch } from "@tracht-digital-solutions/tds-shared/api";
+import { Skeleton } from "@tracht-digital-labs/tds-shared/components";
+import { apiFetch } from "@tracht-digital-labs/tds-shared/api";
 
 interface Summary {
   weekHours: number;

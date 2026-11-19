@@ -3,7 +3,7 @@
 Time-tracker **extension** for the TDS frontend platform, and the **reference
 implementation** of `frontend-contract`. Two halves in one repo, like the contract:
 
-- **Frontend** (`@tracht-digital-solutions/tds-ext-time-tracker`, GitHub Packages) —
+- **Frontend** (`@tracht-digital-labs/tds-ext-time-tracker`, GitHub Packages) —
   a default-exported `ExtensionManifest` (`src/index.ts`) plus the `.astro` pages
   / widgets and the React islands they hydrate (`pages/`, `widgets/`,
   `islands/`). Contributes: the `/time` page, the "Diese Woche" dashboard widget,
@@ -19,8 +19,8 @@ implementation** of `frontend-contract`. Two halves in one repo, like the contra
 The product host enables it in `astro.config.mjs`:
 
 ```ts
-import { frontendHost } from "@tracht-digital-solutions/tds-frontend-contract/astro";
-import timeTracker from "@tracht-digital-solutions/tds-ext-time-tracker";
+import { frontendHost } from "@tracht-digital-labs/tds-frontend-contract/astro";
+import timeTracker from "@tracht-digital-labs/tds-ext-time-tracker";
 export default defineConfig({ integrations: [react(), frontendHost({ extensions: [timeTracker] })] });
 ```
 
